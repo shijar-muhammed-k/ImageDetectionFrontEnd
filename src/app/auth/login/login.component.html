@@ -1,0 +1,114 @@
+<div class="main-container">
+    <div class="wrapper" style="height: 475px">
+        <div class="title-text">
+            <div class="title login">Login Form</div>
+            <div class="title signup">Signup Form</div>
+        </div>
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login">Login</label>
+                <label for="signup" class="slide signup">Signup</label>
+                <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+                <form [formGroup]="loginForm" class="login">
+                    <div class="field">
+                        <input type="text" class="form-control" id="email" placeholder="Enter email"
+                            [ngClass]="{ 'is-invalid': loginFormSubmitted && lf['username'].errors }"
+                            formControlName="username" name="email" (keyup.enter)="user_login()">
+                        <div *ngIf="loginFormSubmitted && lf['username'].errors" class="invalid-feedback">
+                            <div *ngIf="loginFormSubmitted && lf['username'].errors['required']">
+                                Please enter your email id.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="password" class="form-control" id="password" placeholder="Enter password"
+                            [ngClass]="{ 'is-invalid': loginFormSubmitted && lf['password'].errors }"
+                            formControlName="password" name="email" (keyup.enter)="user_login()" name="pswd">
+                        <div *ngIf="loginFormSubmitted && lf['password'].errors" class="invalid-feedback">
+                            <div *ngIf="loginFormSubmitted && lf['password'].errors['required']">
+                                Please enter a Password.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pass-link"><a href="#">Forgot password?</a></div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" (click)="user_login()" value="Login">
+                    </div>
+                    <div class="signup-link">Not a member? <a href="">Signup now</a></div>
+                </form>
+                <form [formGroup]="signUpForm" class="signup">
+                    <div class="field">
+                        <input type="text" class="form-control" id="username" placeholder="Enter Username"
+                            [ngClass]="{ 'is-invalid': signUpFormSubmitted && sf['username'].errors }"
+                            formControlName="username" name="username" (keyup.enter)="user_signUp()">
+                        <div *ngIf="signUpFormSubmitted && sf['username'].errors" class="invalid-feedback">
+                            <div *ngIf="signUpFormSubmitted && sf['username'].errors['required']">
+                                Please enter your email id.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="form-control" id="first_name" placeholder="Enter First Name"
+                            [ngClass]="{ 'is-invalid': signUpFormSubmitted && sf['first_name'].errors }"
+                            formControlName="first_name" name="first_name" (keyup.enter)="user_signUp()">
+                        <div *ngIf="signUpFormSubmitted && sf['first_name'].errors" class="invalid-feedback">
+                            <div *ngIf="signUpFormSubmitted && sf['first_name'].errors['required']">
+                                Please enter your email id.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="form-control" id="last_name" placeholder="Enter Last Name"
+                            [ngClass]="{ 'is-invalid': signUpFormSubmitted && sf['last_name'].errors }"
+                            formControlName="last_name" name="last_name" (keyup.enter)="user_signUp()">
+                        <div *ngIf="signUpFormSubmitted && sf['last_name'].errors" class="invalid-feedback">
+                            <div *ngIf="signUpFormSubmitted && sf['last_name'].errors['required']">
+                                Please enter your email id.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email"
+                        [ngClass]="{ 'is-invalid': signUpFormSubmitted && sf['email'].errors }" formControlName="email"
+                        name="email" (keyup.enter)="user_signUp()">
+                        <div *ngIf="signUpFormSubmitted && sf['email'].errors" class="invalid-feedback">
+                            <div *ngIf="signUpFormSubmitted && sf['email'].errors['required']">
+                                Please enter your email id.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter Phone Number"
+                        [ngClass]="{ 'is-invalid': signUpFormSubmitted && sf['phone'].errors }" formControlName="phone"
+                        name="phone" (keyup.enter)="user_signUp()">
+                        <div *ngIf="signUpFormSubmitted && sf['phone'].errors" class="invalid-feedback">
+                            <div *ngIf="signUpFormSubmitted && sf['phone'].errors['required']">
+                                Please enter your email id.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="password" class="form-control" id="password" placeholder="Enter password"
+                        [ngClass]="{ 'is-invalid': signUpFormSubmitted && sf['password'].errors }" formControlName="password"
+                        name="email" (keyup.enter)="user_signUp()" name="pswd">
+                        <div *ngIf="signUpFormSubmitted && sf['password'].errors" class="invalid-feedback">
+                            <div *ngIf="signUpFormSubmitted && sf['password'].errors['required']">
+                                Please enter a Password.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" (click)="user_signUp()" value="Signup">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

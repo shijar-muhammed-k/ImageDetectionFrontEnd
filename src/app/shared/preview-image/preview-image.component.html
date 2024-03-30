@@ -1,0 +1,5 @@
+<div class="container">
+    <img [src]="data.data?.image" alt="image" class="main-image">
+    <img [src]="data.data.prediction === '1'? 'assets/images/fake-round-stamp-removebg-preview.png': 'assets/images/real-round-stamp-removebg-preview.png'" alt="status" class="status-image">
+    <button *ngIf="data.data.prediction === '1'" (click)="data.report()">Report</button>
+</div>

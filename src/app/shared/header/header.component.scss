@@ -1,0 +1,24 @@
+.login-btn {
+    background-color: #fff;
+    border-radius: 5px;
+    
+    a {
+        color: #000 !important;
+    }
+
+    &:hover {
+        
+        background-color: #000;
+        a {
+            color: #fff !important;
+        }
+    }
+}
+
+header {
+    height: 110px;
+
+    .header {
+        background: #02246b;
+    }
+}

@@ -1,0 +1,31 @@
+<div class="table-wrapper">
+    <h2 style="text-align: center;">User List</h2>
+    <div class="container">
+        <div class="row search-box">
+            <input placeholder="Search User" (keyup)="searchUser($event)" type="text">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>SL NO</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of users; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.first_name}}</td>
+                    <td>{{item.last_name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phone}}</td>
+                </tr>
+                <tr *ngIf="users?.length === 0">
+                    <td colspan="5" style="text-align: center;">Sorry No Users Found</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
