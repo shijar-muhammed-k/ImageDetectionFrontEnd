@@ -51,6 +51,7 @@ export class ReportListComponent implements OnInit {
   }
 
   searchUser(event) {
+    this.currentPage = 1;
     this.getList(event.target.value);
   }
 

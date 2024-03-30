@@ -31,6 +31,7 @@ export class UserListComponent implements OnInit{
   }
 
   searchUser(event) {
+    this.currentPage = 1;
     this.getUserList(event.target.value);
   }
 
