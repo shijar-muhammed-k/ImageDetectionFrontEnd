@@ -136,6 +136,7 @@ export class CheckComponent implements OnInit {
         width: '500px',
         height: 'auto',
         hasBackdrop: true,
+        panelClass: data['prediction'] === '1'? 'check-detect': '',
         data: {
           data:data,
           report: () => {
