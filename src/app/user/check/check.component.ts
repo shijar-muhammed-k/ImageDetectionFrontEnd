@@ -134,7 +134,7 @@ export class CheckComponent implements OnInit {
     this.api.predictImage(data).subscribe(data => {
       this.dialogRef = this.dialog.open(PreviewImageComponent, {
         width: '500px',
-        height: data['prediction'] === '1'? '540px': '520px',
+        height: 'auto',
         hasBackdrop: true,
         data: {
           data:data,
