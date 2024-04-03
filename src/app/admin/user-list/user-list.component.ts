@@ -11,6 +11,7 @@ import { UserService } from 'src/app/core/service/user.service';
 })
 export class UserListComponent implements OnInit{
   users: any;
+  currentPage: number;
 
   constructor (private api: ApiService, private loader: NgxUiLoaderService, private router: Router, private userService: UserService) {
     this.user = JSON.parse(userService.userLoginCheck.value)

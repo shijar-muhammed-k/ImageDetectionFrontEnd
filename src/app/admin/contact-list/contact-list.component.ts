@@ -17,6 +17,7 @@ export class ContactListComponent implements OnInit {
   dialogREf;
   messages;
   user: any;
+  currentPage: number;
   constructor(
     private loader: NgxUiLoaderService,
     private api: ApiService,
